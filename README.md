@@ -41,5 +41,9 @@ link with dynamic library of cUnit to form executable
 
 4. ./palind_test
 
+Reference:
 
+https://javarevisited.blogspot.com/2011/06/top-programming-interview-questions.html
 
+remove char from a string at all places
+when char is found left shift all remaining chars
