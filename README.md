@@ -21,4 +21,7 @@ gcc snprintf.c -DSNPRINTF
 
 gcc snprintf.c -DSPRINTF
 
+pragma.c
 
+__attribute__((constructor))
+__attribute__((destructor))
