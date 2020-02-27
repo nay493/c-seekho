@@ -25,3 +25,21 @@ pragma.c
 
 __attribute__((constructor))
 __attribute__((destructor))
+
+
+Test suite and test cases on a user defined function
+
+1. Install CUnit
+sudo apt-get install libcunit1-dev
+sudo apt-get install libcunit1-ncurses-dev
+
+2. compile file with function defination
+gcc -g -Wall -c palindrome.c
+
+3. gcc -Wall -L/usr/local/lib -o palind_test palind_test.c palindrome.o -lcunit
+link with dynamic library of cUnit to form executable
+
+4. ./palind_test
+
+
+
