@@ -15,7 +15,7 @@ Author: Mohammed Nayeem.
 //Declarations
 int scratch(void);
 int decimal_to_binary(int);
-int binary_to_decimal(int);
+int binary_to_decimal(char *);
 
 int scratch(){
   PF_d(pow(2,3));
@@ -32,6 +32,20 @@ int scratch(){
   return 0;
 }
 
+
+int binary_to_decimal(char *b){
+  int d=0,len=0,i,t=0;
+  for(i=0; *(b+i) != '\0'; i++);
+  len=i;
+  PF_i(len);
+  for(i=len-1;i>=0;i--){
+    //PF_i(*(b+i));
+    t = (*(b+i)-48);
+    d = d + ((pow(2,i))*(t));
+  }
+  PF_i(d);
+  return d;
+}
 
 int decimal_to_binary(int d){
 int b=0,i;
@@ -54,6 +68,7 @@ int main() {
   #endif
 
   decimal_to_binary(4);
+  binary_to_decimal("1111");
 
   return 0;
 }
