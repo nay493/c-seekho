@@ -11,6 +11,7 @@ Author: Mohammed Nayeem.
 #define PF_d(x) printf("In file:%s, func:%s, line:%d, %s=%lf\n",__FILE__,__func__,__LINE__,#x,x)
 #define PF_i(x) printf("In file:%s, func:%s, line:%d, %s=%d\n",__FILE__,__func__,__LINE__,#x,x)
 #define PF_lu(x) printf("In file:%s, func:%s, line:%d, %s=%lu\n",__FILE__,__func__,__LINE__,#x,x)
+#define PF_c(x) printf("In file:%s, func:%s, line:%d, %s=%c\n",__FILE__,__func__,__LINE__,#x,x)
 
 //Declarations
 int scratch(void);
@@ -27,7 +28,13 @@ int scratch(){
   PF_i(y);
   PF_i(123);
   PF_lu(sizeof(int));
-
+  PF_i('A');
+  PF_i('a');
+  PF_i('Z');
+  PF_i('z');
+  PF_c(97-32);
+  printf("\x41");printf("\n");
+  printf("\65");printf("\n"); // printing char without format specifiers works only for hex ASCII values
   // compile to find macro expansion
   //how to find type of any data type
   //printf("%d",typeof(x));
@@ -84,12 +91,12 @@ char *bin_sub(char *b1, char *b2){
 int main() {
 
   #ifdef SCRATCH
-  scratch();
+    scratch();
+  #else
+    decimal_to_binary(4);
+    binary_to_decimal("1111");
+    bin_add("1100", "0001");
+    bin_sub("1000", "0001");
   #endif
-
-  decimal_to_binary(4);
-  binary_to_decimal("1111");
-  bin_add("1100", "0001");
-  bin_sub("1000", "0001");
   return 0;
 }
