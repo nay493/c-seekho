@@ -14,8 +14,10 @@ Author: Mohammed Nayeem.
 
 //Declarations
 int scratch(void);
-int decimal_to_binary(int);
+void decimal_to_binary(int);
 int binary_to_decimal(char *);
+char *bin_add(char *, char *);
+char *bin_sub(char *, char *);
 
 int scratch(){
   PF_d(pow(2,3));
@@ -47,7 +49,7 @@ int binary_to_decimal(char *b){
   return d;
 }
 
-int decimal_to_binary(int d){
+void decimal_to_binary(int d){
 int b=0,i;
 for(i=31;i>=0;i--){
   if((i+1)%4 == 0)
@@ -58,7 +60,25 @@ for(i=31;i>=0;i--){
     printf("0");
 }
 printf("\n");
-return b;
+//return b;
+}
+
+char *bin_add(char *b1, char *b2){
+  char *b3;
+  int val1,val2;
+  val1 = binary_to_decimal(b1);
+  val2 = binary_to_decimal(b2);
+  decimal_to_binary(val1 + val2);
+  return 0;
+}
+
+char *bin_sub(char *b1, char *b2){
+  char *b3;
+  int val1,val2;
+  val1 = binary_to_decimal(b1);
+  val2 = binary_to_decimal(b2);
+  decimal_to_binary(val1 - val2);
+  return 0;
 }
 
 int main() {
@@ -69,6 +89,7 @@ int main() {
 
   decimal_to_binary(4);
   binary_to_decimal("1111");
-
+  bin_add("1100", "0001");
+  bin_sub("1000", "0001");
   return 0;
 }
