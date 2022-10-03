@@ -1,3 +1,9 @@
+/* 
+ *    Reference : https://ftp.gnu.org/old-gnu/Manuals/glibc-2.2.3/html_chapter/libc_31.html
+ *
+ *
+ */
+
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
